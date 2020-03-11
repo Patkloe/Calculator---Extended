@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Calculator</title>
+
+ </head>
+ <body>
+ 
+ <h1>CALCULATOR</h1>
+<div id = "story">
+<p> Display the value</p>
+</div>
+ <label>Square this number :</label>
+    <input type="text" id="square-input" name="square-input" size = "2"><br><br>
+<input type = "button" value="Square" onclick = "square()"><br><br>
+<label>Half this number :</label>
+    <input type="text" id="half-input" name="half-input" size = "2"><br><br>
+<input type = "button" value="halfnumber" onclick = "half()"><br><br>
+<label>Percent of </label><br><br>
+<label>number1 : </label>
+<input type="text" id="number1" name="number1" size = "2"><br><br>
+<label>number2 :</label>
+<input type="text" id="number2" name="number2" size = "2"><br><br>
+<input type = "button" value="percentof" onclick = "percentof()"><br><br>
+<label>Calculate area of  circle with Radius </label><br><br>
+<label>radius of the circle :</label>
+<input type="text" id="radius" name="radius" size = "2"><br><br>
+<input type = "button" value="AreaofCircle" onclick = "AreaofCircle()"><br><br>
+<script>
+let story = document.getElementById("story");
+square = () =>{
+var val = document.getElementById("square-input");
+var cal = Number(val.value) * Number(val.value) ;
+story.innerHTML = "<p>"+ "The square of the value input" +" " + `${val.value}`+ " " + "is :" + " " + `${cal}` + "</p>";
+}
+half = () =>{
+var num = document.getElementById("half-input");
+var nbre = Number(num.value)/2;
+story.innerHTML = "<p>"+ "The half of the value input" + " " + `${num.value}`+ " " + "is :" + " " + `${nbre}` + "</p>";
+}
+percentof = () =>{
+var nbre1 = document.getElementById("number1");
+var nbre2 = document.getElementById("number2");
+var calcul = (nbre1.value/nbre2.value)*100;
+story.innerHTML = "<p>"+ " the value input" + " " + `${nbre1.value}`+ " " + "is :" + " " + `${calcul}` + "% of the value input" + " " + `${nbre2.value}` + "</p>";
+}
+AreaofCircle = () =>{
+var diam = document.getElementById("radius");
+var pi = Math.PI;
+var surf = (diam.value * diam.value) * pi;
+var newnumber = new Number(surf+'').toFixed(parseInt(2));
+var show =  parseFloat(newnumber); 
+story.innerHTML = "<p>"+ "The area for a circle with radius" + " " + `${diam.value}`+ " " + "is :" + " " + `${show}` + "</p>";
+}
+</script>
+</body>
+</html>
